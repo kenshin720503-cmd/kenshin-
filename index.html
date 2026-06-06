@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Korean from scratch — Hangul, vocabulary, grammar, quizzes, and conversation practice with audio pronunciation." />
+  <title>K-Start · Learn Korean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-logo">한</span>
+      <div class="brand-text">
+        <h1>K-Start</h1>
+        <p>Learn Korean, one block at a time</p>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Sections">
+      <button class="nav-btn active" data-section="hangul">Hangul</button>
+      <button class="nav-btn" data-section="vocab">Vocabulary</button>
+      <button class="nav-btn" data-section="grammar">Grammar</button>
+      <button class="nav-btn" data-section="quiz">Quiz</button>
+      <button class="nav-btn" data-section="conversation">Conversation</button>
+    </nav>
+  </header>
+
+  <p id="audioWarning" class="audio-warning" hidden>
+    🔇 Your browser doesn't support speech audio, so pronunciation playback is disabled.
+  </p>
+
+  <main>
+    <!-- HANGUL -->
+    <section id="hangul" class="page active">
+      <div class="page-intro">
+        <h2>한글 · Hangul</h2>
+        <p>
+          Korean is written in <strong>Hangul</strong>, an alphabet of consonants and vowels
+          that stack into square syllable blocks (consonant + vowel, e.g.
+          <span class="hl">ㅎ + ㅏ + ㄴ → 한</span>). Tap any letter to hear it.
+        </p>
+      </div>
+      <div id="hangulGroups"></div>
+    </section>
+
+    <!-- VOCABULARY -->
+    <section id="vocab" class="page">
+      <div class="page-intro">
+        <h2>단어 · Vocabulary</h2>
+        <p>Browse words by topic. Tap 🔊 to listen, or tap a card to flip and reveal the meaning.</p>
+      </div>
+      <div class="filter-bar" id="vocabFilter" role="group" aria-label="Filter by level">
+        <button class="chip active" data-level="all">All levels</button>
+        <button class="chip" data-level="Beginner">Beginner</button>
+        <button class="chip" data-level="Intermediate">Intermediate</button>
+        <button class="chip" data-level="Advanced">Advanced</button>
+      </div>
+      <div id="vocabGroups"></div>
+    </section>
+
+    <!-- GRAMMAR -->
+    <section id="grammar" class="page">
+      <div class="page-intro">
+        <h2>문법 · Grammar</h2>
+        <p>Essential sentence patterns from beginner to intermediate, with examples you can listen to.</p>
+      </div>
+      <div id="grammarList"></div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="page">
+      <div class="page-intro">
+        <h2>퀴즈 · Quiz</h2>
+        <p>Test yourself with a quick 10-question round mixing letters, words, and grammar.</p>
+      </div>
+      <div id="quizArea" class="quiz-area"></div>
+    </section>
+
+    <!-- CONVERSATION -->
+    <section id="conversation" class="page">
+      <div class="page-intro">
+        <h2>회화 · Conversation</h2>
+        <p>Real-life dialogues. Play a single line, or listen to the whole conversation.</p>
+      </div>
+      <div id="conversationList"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ♥ for Korean learners · 화이팅! (You can do it!)</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
