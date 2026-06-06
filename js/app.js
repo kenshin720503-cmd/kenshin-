@@ -142,50 +142,145 @@
   }
 
   /* ----------------------------------------------------------------- */
-  /* 2. Vocabulary (with level filter + flip cards)                    */
+  /* 2. Vocabulary — one topic per "stage", with stage navigation,     */
+  /*    level filter, flip cards, and saved progress (localStorage).   */
   /* ----------------------------------------------------------------- */
   let vocabLevel = "all";
+  let vocabStage = 0;
+
+  // Topics that have at least one word matching the current level filter.
+  function activeStages() {
+    return D.vocab
+      .map((topic) => ({
+        topic: topic.topic,
+        words: topic.words.filter(
+          (w) => vocabLevel === "all" || w.level === vocabLevel
+        )
+      }))
+      .filter((s) => s.words.length > 0);
+  }
+
+  const VOCAB_KEY = "kstart_vocab_stage_";
+
+  function saveVocabStage() {
+    try {
+      localStorage.setItem(VOCAB_KEY + vocabLevel, String(vocabStage));
+    } catch (e) {
+      /* localStorage may be unavailable (private mode) — ignore. */
+    }
+  }
+
+  function loadVocabStage(max) {
+    try {
+      const saved = parseInt(localStorage.getItem(VOCAB_KEY + vocabLevel), 10);
+      if (!isNaN(saved)) return Math.min(Math.max(saved, 0), max);
+    } catch (e) {
+      /* ignore */
+    }
+    return 0;
+  }
+
+  function makeVocabCard(w) {
+    const card = el("div", "vocab-card");
+    card.tabIndex = 0;
+    card.innerHTML =
+      '<span class="level-tag ' + w.level.toLowerCase() + '">' + w.level + "</span>" +
+      '<div class="vocab-front">' +
+      '<span class="vocab-ko">' + w.ko + "</span>" +
+      '<span class="vocab-rom">' + w.rom + "</span>" +
+      "</div>" +
+      '<div class="vocab-back">' + w.en + "</div>" +
+      '<span class="flip-hint">tap to flip</span>';
+
+    // Flip on click (but not when the 🔊 button is pressed).
+    card.addEventListener("click", () => card.classList.toggle("flipped"));
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") card.classList.toggle("flipped");
+    });
+
+    card.appendChild(speakButton(w.ko));
+    return card;
+  }
 
   function renderVocab() {
     const root = document.getElementById("vocabGroups");
     root.innerHTML = "";
 
-    D.vocab.forEach((topic) => {
-      const words = topic.words.filter(
-        (w) => vocabLevel === "all" || w.level === vocabLevel
-      );
-      if (!words.length) return;
+    const stages = activeStages();
+    const total = stages.length;
+    if (!total) {
+      root.appendChild(el("p", "empty-note", "No words for this level yet."));
+      return;
+    }
+    if (vocabStage > total - 1) vocabStage = total - 1;
+    const stage = stages[vocabStage];
 
-      const block = el("div", "group-block");
-      block.appendChild(el("h3", "group-title", topic.topic));
+    // Progress header: "Set 3 / 14" + progress bar.
+    const header = el("div", "stage-header");
+    header.innerHTML =
+      '<div class="stage-title">' +
+      '<h3 class="group-title">' + stage.topic + "</h3>" +
+      '<span class="stage-count">Set ' + (vocabStage + 1) + " / " + total +
+      " · " + stage.words.length + " words</span>" +
+      "</div>" +
+      '<div class="progress-track"><div class="progress-fill" style="width:' +
+      ((vocabStage + 1) / total) * 100 + '%"></div></div>';
+    root.appendChild(header);
 
-      const grid = el("div", "vocab-grid");
-      words.forEach((w) => {
-        const card = el("div", "vocab-card");
-        card.tabIndex = 0;
-        card.innerHTML =
-          '<span class="level-tag ' + w.level.toLowerCase() + '">' + w.level + "</span>" +
-          '<div class="vocab-front">' +
-          '<span class="vocab-ko">' + w.ko + "</span>" +
-          '<span class="vocab-rom">' + w.rom + "</span>" +
-          "</div>" +
-          '<div class="vocab-back">' + w.en + "</div>" +
-          '<span class="flip-hint">tap to flip</span>';
+    // Word grid for this stage.
+    const grid = el("div", "vocab-grid");
+    stage.words.forEach((w) => grid.appendChild(makeVocabCard(w)));
+    root.appendChild(grid);
 
-        // Flip on click (but not when the 🔊 button is pressed).
-        card.addEventListener("click", () => card.classList.toggle("flipped"));
-        card.addEventListener("keypress", (e) => {
-          if (e.key === "Enter" || e.key === " ") card.classList.toggle("flipped");
-        });
+    // Navigation: Previous / Next (Next becomes a finish note on last set).
+    const nav = el("div", "stage-nav");
 
-        const speakBtn = speakButton(w.ko);
-        card.appendChild(speakBtn);
-        grid.appendChild(card);
-      });
-
-      block.appendChild(grid);
-      root.appendChild(block);
+    const prev = el("button", "btn-secondary", "← Previous");
+    prev.type = "button";
+    prev.disabled = vocabStage === 0;
+    prev.addEventListener("click", () => {
+      vocabStage--;
+      saveVocabStage();
+      renderVocab();
+      scrollVocabTop();
     });
+    nav.appendChild(prev);
+
+    if (vocabStage < total - 1) {
+      const next = el("button", "btn-primary", "Next set →");
+      next.type = "button";
+      next.addEventListener("click", () => {
+        vocabStage++;
+        saveVocabStage();
+        renderVocab();
+        scrollVocabTop();
+      });
+      nav.appendChild(next);
+    } else {
+      const restart = el("button", "btn-primary", "↻ Start over");
+      restart.type = "button";
+      restart.addEventListener("click", () => {
+        vocabStage = 0;
+        saveVocabStage();
+        renderVocab();
+        scrollVocabTop();
+      });
+      nav.appendChild(restart);
+    }
+    root.appendChild(nav);
+
+    if (vocabStage === total - 1) {
+      root.appendChild(
+        el("p", "finish-note", "🎉 You've reached the last set! Great work.")
+      );
+    }
+
+    saveVocabStage();
+  }
+
+  function scrollVocabTop() {
+    const sec = document.getElementById("vocab");
+    if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function initVocabFilter() {
@@ -197,6 +292,8 @@
       bar.querySelectorAll(".chip").forEach((c) =>
         c.classList.toggle("active", c === chip)
       );
+      // Restore saved progress for this level (clamped to range).
+      vocabStage = loadVocabStage(activeStages().length - 1);
       renderVocab();
     });
   }
@@ -392,6 +489,7 @@
     initNav();
     renderHangul();
     initVocabFilter();
+    vocabStage = loadVocabStage(activeStages().length - 1);
     renderVocab();
     renderGrammar();
     startQuiz();

@@ -80,23 +80,56 @@ window.KData = {
     {
       topic: "Greetings (인사)",
       words: [
-        { ko: "안녕하세요", rom: "annyeonghaseyo", en: "Hello", level: "Beginner" },
+        { ko: "안녕하세요", rom: "annyeonghaseyo", en: "Hello (polite)", level: "Beginner" },
+        { ko: "안녕", rom: "annyeong", en: "Hi / Bye (casual)", level: "Beginner" },
         { ko: "안녕히 가세요", rom: "annyeonghi gaseyo", en: "Goodbye (to someone leaving)", level: "Beginner" },
+        { ko: "안녕히 계세요", rom: "annyeonghi gyeseyo", en: "Goodbye (to someone staying)", level: "Beginner" },
         { ko: "감사합니다", rom: "gamsahamnida", en: "Thank you", level: "Beginner" },
+        { ko: "고맙습니다", rom: "gomapseumnida", en: "Thank you", level: "Beginner" },
         { ko: "죄송합니다", rom: "joesonghamnida", en: "I'm sorry", level: "Beginner" },
+        { ko: "미안해요", rom: "mianhaeyo", en: "Sorry (casual)", level: "Beginner" },
         { ko: "반갑습니다", rom: "bangapseumnida", en: "Nice to meet you", level: "Beginner" },
-        { ko: "오랜만이에요", rom: "oraenmanieyo", en: "Long time no see", level: "Intermediate" }
+        { ko: "네", rom: "ne", en: "Yes", level: "Beginner" },
+        { ko: "아니요", rom: "aniyo", en: "No", level: "Beginner" },
+        { ko: "실례합니다", rom: "sillyehamnida", en: "Excuse me", level: "Intermediate" },
+        { ko: "처음 뵙겠습니다", rom: "cheoeum boepgesseumnida", en: "How do you do (first meeting)", level: "Intermediate" },
+        { ko: "오랜만이에요", rom: "oraenmanieyo", en: "Long time no see", level: "Intermediate" },
+        { ko: "잘 지냈어요?", rom: "jal jinaesseoyo?", en: "How have you been?", level: "Intermediate" }
       ]
     },
     {
-      topic: "Numbers (숫자)",
+      topic: "Native Numbers (고유어 숫자)",
       words: [
         { ko: "하나", rom: "hana", en: "One", level: "Beginner" },
         { ko: "둘", rom: "dul", en: "Two", level: "Beginner" },
         { ko: "셋", rom: "set", en: "Three", level: "Beginner" },
         { ko: "넷", rom: "net", en: "Four", level: "Beginner" },
         { ko: "다섯", rom: "daseot", en: "Five", level: "Beginner" },
-        { ko: "열", rom: "yeol", en: "Ten", level: "Beginner" }
+        { ko: "여섯", rom: "yeoseot", en: "Six", level: "Beginner" },
+        { ko: "일곱", rom: "ilgop", en: "Seven", level: "Beginner" },
+        { ko: "여덟", rom: "yeodeol", en: "Eight", level: "Beginner" },
+        { ko: "아홉", rom: "ahop", en: "Nine", level: "Beginner" },
+        { ko: "열", rom: "yeol", en: "Ten", level: "Beginner" },
+        { ko: "스물", rom: "seumul", en: "Twenty", level: "Intermediate" },
+        { ko: "서른", rom: "seoreun", en: "Thirty", level: "Intermediate" }
+      ]
+    },
+    {
+      topic: "Sino Numbers (한자어 숫자)",
+      words: [
+        { ko: "일", rom: "il", en: "One", level: "Beginner" },
+        { ko: "이", rom: "i", en: "Two", level: "Beginner" },
+        { ko: "삼", rom: "sam", en: "Three", level: "Beginner" },
+        { ko: "사", rom: "sa", en: "Four", level: "Beginner" },
+        { ko: "오", rom: "o", en: "Five", level: "Beginner" },
+        { ko: "육", rom: "yuk", en: "Six", level: "Beginner" },
+        { ko: "칠", rom: "chil", en: "Seven", level: "Beginner" },
+        { ko: "팔", rom: "pal", en: "Eight", level: "Beginner" },
+        { ko: "구", rom: "gu", en: "Nine", level: "Beginner" },
+        { ko: "십", rom: "sip", en: "Ten", level: "Beginner" },
+        { ko: "백", rom: "baek", en: "Hundred", level: "Intermediate" },
+        { ko: "천", rom: "cheon", en: "Thousand", level: "Intermediate" },
+        { ko: "만", rom: "man", en: "Ten thousand", level: "Intermediate" }
       ]
     },
     {
@@ -105,20 +138,74 @@ window.KData = {
         { ko: "밥", rom: "bap", en: "Rice / meal", level: "Beginner" },
         { ko: "물", rom: "mul", en: "Water", level: "Beginner" },
         { ko: "김치", rom: "gimchi", en: "Kimchi", level: "Beginner" },
+        { ko: "고기", rom: "gogi", en: "Meat", level: "Beginner" },
+        { ko: "과일", rom: "gwail", en: "Fruit", level: "Beginner" },
+        { ko: "빵", rom: "ppang", en: "Bread", level: "Beginner" },
+        { ko: "커피", rom: "keopi", en: "Coffee", level: "Beginner" },
+        { ko: "우유", rom: "uyu", en: "Milk", level: "Beginner" },
+        { ko: "라면", rom: "ramyeon", en: "Ramen", level: "Beginner" },
         { ko: "불고기", rom: "bulgogi", en: "Marinated grilled beef", level: "Intermediate" },
         { ko: "비빔밥", rom: "bibimbap", en: "Mixed rice bowl", level: "Intermediate" },
-        { ko: "맛있어요", rom: "masisseoyo", en: "It's delicious", level: "Intermediate" }
+        { ko: "김밥", rom: "gimbap", en: "Seaweed rice roll", level: "Intermediate" },
+        { ko: "맛있어요", rom: "masisseoyo", en: "It's delicious", level: "Intermediate" },
+        { ko: "매워요", rom: "maewoyo", en: "It's spicy", level: "Intermediate" },
+        { ko: "배고파요", rom: "baegopayo", en: "I'm hungry", level: "Intermediate" }
       ]
     },
     {
       topic: "Family (가족)",
       words: [
+        { ko: "가족", rom: "gajok", en: "Family", level: "Beginner" },
         { ko: "엄마", rom: "eomma", en: "Mom", level: "Beginner" },
         { ko: "아빠", rom: "appa", en: "Dad", level: "Beginner" },
+        { ko: "어머니", rom: "eomeoni", en: "Mother", level: "Beginner" },
+        { ko: "아버지", rom: "abeoji", en: "Father", level: "Beginner" },
         { ko: "형", rom: "hyeong", en: "Older brother (male speaker)", level: "Intermediate" },
+        { ko: "오빠", rom: "oppa", en: "Older brother (female speaker)", level: "Intermediate" },
         { ko: "누나", rom: "nuna", en: "Older sister (male speaker)", level: "Intermediate" },
+        { ko: "언니", rom: "eonni", en: "Older sister (female speaker)", level: "Intermediate" },
         { ko: "동생", rom: "dongsaeng", en: "Younger sibling", level: "Intermediate" },
-        { ko: "할머니", rom: "halmeoni", en: "Grandmother", level: "Beginner" }
+        { ko: "할머니", rom: "halmeoni", en: "Grandmother", level: "Beginner" },
+        { ko: "할아버지", rom: "harabeoji", en: "Grandfather", level: "Beginner" },
+        { ko: "아들", rom: "adeul", en: "Son", level: "Intermediate" },
+        { ko: "딸", rom: "ttal", en: "Daughter", level: "Intermediate" }
+      ]
+    },
+    {
+      topic: "Common Verbs (동사)",
+      words: [
+        { ko: "가다", rom: "gada", en: "To go", level: "Beginner" },
+        { ko: "오다", rom: "oda", en: "To come", level: "Beginner" },
+        { ko: "먹다", rom: "meokda", en: "To eat", level: "Beginner" },
+        { ko: "마시다", rom: "masida", en: "To drink", level: "Beginner" },
+        { ko: "보다", rom: "boda", en: "To see / watch", level: "Beginner" },
+        { ko: "하다", rom: "hada", en: "To do", level: "Beginner" },
+        { ko: "자다", rom: "jada", en: "To sleep", level: "Beginner" },
+        { ko: "사다", rom: "sada", en: "To buy", level: "Beginner" },
+        { ko: "읽다", rom: "ikda", en: "To read", level: "Intermediate" },
+        { ko: "쓰다", rom: "sseuda", en: "To write / use", level: "Intermediate" },
+        { ko: "듣다", rom: "deutda", en: "To listen", level: "Intermediate" },
+        { ko: "말하다", rom: "malhada", en: "To speak", level: "Intermediate" },
+        { ko: "공부하다", rom: "gongbuhada", en: "To study", level: "Beginner" },
+        { ko: "일하다", rom: "ilhada", en: "To work", level: "Beginner" },
+        { ko: "좋아하다", rom: "joahada", en: "To like", level: "Beginner" }
+      ]
+    },
+    {
+      topic: "Places (장소)",
+      words: [
+        { ko: "집", rom: "jip", en: "House / home", level: "Beginner" },
+        { ko: "학교", rom: "hakgyo", en: "School", level: "Beginner" },
+        { ko: "회사", rom: "hoesa", en: "Company / office", level: "Intermediate" },
+        { ko: "병원", rom: "byeongwon", en: "Hospital", level: "Intermediate" },
+        { ko: "식당", rom: "sikdang", en: "Restaurant", level: "Beginner" },
+        { ko: "카페", rom: "kape", en: "Cafe", level: "Beginner" },
+        { ko: "가게", rom: "gage", en: "Store", level: "Beginner" },
+        { ko: "시장", rom: "sijang", en: "Market", level: "Intermediate" },
+        { ko: "은행", rom: "eunhaeng", en: "Bank", level: "Intermediate" },
+        { ko: "공원", rom: "gongwon", en: "Park", level: "Beginner" },
+        { ko: "도서관", rom: "doseogwan", en: "Library", level: "Intermediate" },
+        { ko: "약국", rom: "yakguk", en: "Pharmacy", level: "Intermediate" }
       ]
     },
     {
@@ -126,41 +213,122 @@ window.KData = {
       words: [
         { ko: "공항", rom: "gonghang", en: "Airport", level: "Intermediate" },
         { ko: "기차", rom: "gicha", en: "Train", level: "Beginner" },
+        { ko: "버스", rom: "beoseu", en: "Bus", level: "Beginner" },
+        { ko: "지하철", rom: "jihacheol", en: "Subway", level: "Beginner" },
+        { ko: "택시", rom: "taeksi", en: "Taxi", level: "Beginner" },
+        { ko: "호텔", rom: "hotel", en: "Hotel", level: "Beginner" },
         { ko: "화장실", rom: "hwajangsil", en: "Restroom", level: "Beginner" },
+        { ko: "여권", rom: "yeogwon", en: "Passport", level: "Intermediate" },
+        { ko: "표", rom: "pyo", en: "Ticket", level: "Beginner" },
+        { ko: "지도", rom: "jido", en: "Map", level: "Beginner" },
+        { ko: "길", rom: "gil", en: "Road / way", level: "Beginner" },
         { ko: "얼마예요?", rom: "eolmayeyo?", en: "How much is it?", level: "Beginner" },
-        { ko: "여기요", rom: "yeogiyo", en: "Over here / Excuse me", level: "Beginner" },
+        { ko: "어디예요?", rom: "eodiyeyo?", en: "Where is it?", level: "Beginner" },
         { ko: "예약", rom: "yeyak", en: "Reservation", level: "Advanced" }
       ]
     },
     {
-      topic: "Time (시간)",
+      topic: "Time & Days (시간)",
       words: [
         { ko: "오늘", rom: "oneul", en: "Today", level: "Beginner" },
         { ko: "내일", rom: "naeil", en: "Tomorrow", level: "Beginner" },
         { ko: "어제", rom: "eoje", en: "Yesterday", level: "Beginner" },
         { ko: "지금", rom: "jigeum", en: "Now", level: "Beginner" },
+        { ko: "아침", rom: "achim", en: "Morning", level: "Beginner" },
+        { ko: "점심", rom: "jeomsim", en: "Noon / lunch", level: "Beginner" },
+        { ko: "저녁", rom: "jeonyeok", en: "Evening / dinner", level: "Beginner" },
+        { ko: "밤", rom: "bam", en: "Night", level: "Beginner" },
         { ko: "주말", rom: "jumal", en: "Weekend", level: "Intermediate" },
-        { ko: "약속", rom: "yaksok", en: "Appointment / promise", level: "Advanced" }
+        { ko: "월요일", rom: "woryoil", en: "Monday", level: "Intermediate" },
+        { ko: "화요일", rom: "hwayoil", en: "Tuesday", level: "Intermediate" },
+        { ko: "수요일", rom: "suyoil", en: "Wednesday", level: "Intermediate" },
+        { ko: "목요일", rom: "mogyoil", en: "Thursday", level: "Intermediate" },
+        { ko: "금요일", rom: "geumyoil", en: "Friday", level: "Intermediate" },
+        { ko: "토요일", rom: "toyoil", en: "Saturday", level: "Intermediate" },
+        { ko: "일요일", rom: "iryoil", en: "Sunday", level: "Intermediate" }
       ]
     },
     {
       topic: "Colors (색깔)",
       words: [
+        { ko: "색깔", rom: "saekkal", en: "Color", level: "Beginner" },
         { ko: "빨간색", rom: "ppalgansaek", en: "Red", level: "Beginner" },
         { ko: "파란색", rom: "paransaek", en: "Blue", level: "Beginner" },
         { ko: "노란색", rom: "noransaek", en: "Yellow", level: "Beginner" },
+        { ko: "초록색", rom: "choroksaek", en: "Green", level: "Intermediate" },
         { ko: "검은색", rom: "geomeunsaek", en: "Black", level: "Beginner" },
         { ko: "하얀색", rom: "hayansaek", en: "White", level: "Beginner" },
-        { ko: "초록색", rom: "choroksaek", en: "Green", level: "Intermediate" }
+        { ko: "분홍색", rom: "bunhongsaek", en: "Pink", level: "Intermediate" },
+        { ko: "보라색", rom: "borasaek", en: "Purple", level: "Intermediate" },
+        { ko: "주황색", rom: "juhwangsaek", en: "Orange", level: "Intermediate" },
+        { ko: "갈색", rom: "galsaek", en: "Brown", level: "Intermediate" },
+        { ko: "회색", rom: "hoesaek", en: "Gray", level: "Intermediate" }
+      ]
+    },
+    {
+      topic: "Weather (날씨)",
+      words: [
+        { ko: "날씨", rom: "nalssi", en: "Weather", level: "Beginner" },
+        { ko: "비", rom: "bi", en: "Rain", level: "Beginner" },
+        { ko: "눈", rom: "nun", en: "Snow", level: "Beginner" },
+        { ko: "바람", rom: "baram", en: "Wind", level: "Beginner" },
+        { ko: "구름", rom: "gureum", en: "Cloud", level: "Beginner" },
+        { ko: "해", rom: "hae", en: "Sun", level: "Beginner" },
+        { ko: "더워요", rom: "deowoyo", en: "It's hot", level: "Beginner" },
+        { ko: "추워요", rom: "chuwoyo", en: "It's cold", level: "Beginner" },
+        { ko: "따뜻해요", rom: "ttatteuthaeyo", en: "It's warm", level: "Intermediate" },
+        { ko: "시원해요", rom: "siwonhaeyo", en: "It's cool / refreshing", level: "Intermediate" },
+        { ko: "맑아요", rom: "malgayo", en: "It's clear / sunny", level: "Intermediate" },
+        { ko: "흐려요", rom: "heuryeoyo", en: "It's cloudy", level: "Intermediate" }
+      ]
+    },
+    {
+      topic: "Body (몸)",
+      words: [
+        { ko: "몸", rom: "mom", en: "Body", level: "Beginner" },
+        { ko: "머리", rom: "meori", en: "Head / hair", level: "Beginner" },
+        { ko: "얼굴", rom: "eolgul", en: "Face", level: "Beginner" },
+        { ko: "눈", rom: "nun", en: "Eye", level: "Beginner" },
+        { ko: "코", rom: "ko", en: "Nose", level: "Beginner" },
+        { ko: "입", rom: "ip", en: "Mouth", level: "Beginner" },
+        { ko: "귀", rom: "gwi", en: "Ear", level: "Beginner" },
+        { ko: "손", rom: "son", en: "Hand", level: "Beginner" },
+        { ko: "발", rom: "bal", en: "Foot", level: "Beginner" },
+        { ko: "다리", rom: "dari", en: "Leg", level: "Beginner" },
+        { ko: "배", rom: "bae", en: "Stomach", level: "Beginner" },
+        { ko: "아파요", rom: "apayo", en: "It hurts / I'm sick", level: "Intermediate" }
+      ]
+    },
+    {
+      topic: "Hobbies (취미)",
+      words: [
+        { ko: "취미", rom: "chwimi", en: "Hobby", level: "Beginner" },
+        { ko: "운동", rom: "undong", en: "Exercise", level: "Beginner" },
+        { ko: "음악", rom: "eumak", en: "Music", level: "Beginner" },
+        { ko: "영화", rom: "yeonghwa", en: "Movie", level: "Beginner" },
+        { ko: "게임", rom: "geim", en: "Game", level: "Beginner" },
+        { ko: "여행", rom: "yeohaeng", en: "Travel", level: "Beginner" },
+        { ko: "요리", rom: "yori", en: "Cooking", level: "Beginner" },
+        { ko: "노래", rom: "norae", en: "Song", level: "Beginner" },
+        { ko: "사진", rom: "sajin", en: "Photo", level: "Beginner" },
+        { ko: "독서", rom: "dokseo", en: "Reading", level: "Intermediate" },
+        { ko: "춤", rom: "chum", en: "Dance", level: "Intermediate" },
+        { ko: "그림", rom: "geurim", en: "Drawing / picture", level: "Intermediate" }
       ]
     },
     {
       topic: "Feelings (감정)",
       words: [
         { ko: "행복해요", rom: "haengbokhaeyo", en: "I'm happy", level: "Intermediate" },
+        { ko: "기뻐요", rom: "gippeoyo", en: "I'm glad", level: "Intermediate" },
         { ko: "슬퍼요", rom: "seulpeoyo", en: "I'm sad", level: "Intermediate" },
+        { ko: "화나요", rom: "hwanayo", en: "I'm angry", level: "Intermediate" },
         { ko: "피곤해요", rom: "pigonhaeyo", en: "I'm tired", level: "Intermediate" },
+        { ko: "무서워요", rom: "museowoyo", en: "I'm scared", level: "Intermediate" },
         { ko: "괜찮아요", rom: "gwaenchanayo", en: "It's okay / I'm fine", level: "Beginner" },
+        { ko: "좋아요", rom: "joayo", en: "It's good / I like it", level: "Beginner" },
+        { ko: "싫어요", rom: "sireoyo", en: "I don't like it", level: "Beginner" },
+        { ko: "사랑해요", rom: "saranghaeyo", en: "I love you", level: "Beginner" },
         { ko: "보고 싶어요", rom: "bogo sipeoyo", en: "I miss you", level: "Advanced" },
         { ko: "신나요", rom: "sinnayo", en: "I'm excited", level: "Advanced" }
       ]

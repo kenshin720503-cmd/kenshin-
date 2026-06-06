@@ -200,6 +200,60 @@ main { max-width: 1080px; margin: 0 auto; padding: clamp(20px, 4vw, 40px); }
 .chip:hover { border-color: var(--primary); color: var(--primary-dk); }
 .chip.active { background: var(--primary); border-color: var(--primary); color: #fff; }
 
+/* Stage header + progress bar */
+.stage-header { margin-bottom: 18px; }
+.stage-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.stage-title .group-title { margin: 0; }
+.stage-count { font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.progress-track {
+  height: 10px;
+  background: #eee6f5;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--pink));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* Stage navigation buttons */
+.stage-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+.btn-secondary {
+  border: 1.5px solid #ece3f5;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-secondary:hover:not(:disabled) { border-color: var(--primary); color: var(--primary-dk); }
+.btn-secondary:disabled { opacity: 0.4; cursor: default; }
+
+.finish-note {
+  text-align: center;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #2a9d78;
+}
+.empty-note { color: var(--ink-soft); text-align: center; padding: 20px; }
+
 .vocab-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
