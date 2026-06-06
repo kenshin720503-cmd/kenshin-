@@ -8,7 +8,7 @@ window.KData = {
   /* --------------------------------------------------------------------- */
   hangul: [
     {
-      group: "Basic Consonants (자음)",
+      group: "Basic Consonants",
       note: "14 basic consonants. Some sound softer at the start of a word.",
       letters: [
         { ch: "ㄱ", rom: "g / k", hint: "like g in 'go'" },
@@ -28,7 +28,7 @@ window.KData = {
       ]
     },
     {
-      group: "Basic Vowels (모음)",
+      group: "Basic Vowels",
       note: "10 basic vowels. A short stroke added makes a 'y' sound.",
       letters: [
         { ch: "ㅏ", rom: "a", hint: "like a in 'father'" },
@@ -44,7 +44,7 @@ window.KData = {
       ]
     },
     {
-      group: "Double Consonants (쌍자음)",
+      group: "Double Consonants",
       note: "5 'tense' consonants, pronounced harder and tighter.",
       letters: [
         { ch: "ㄲ", rom: "kk", hint: "tense k" },
@@ -55,7 +55,7 @@ window.KData = {
       ]
     },
     {
-      group: "Compound Vowels (복합모음)",
+      group: "Compound Vowels",
       note: "11 combined vowels formed by joining basic vowels.",
       letters: [
         { ch: "ㅐ", rom: "ae", hint: "like e in 'bed'" },
@@ -78,7 +78,7 @@ window.KData = {
   /* --------------------------------------------------------------------- */
   vocab: [
     {
-      topic: "Greetings (인사)",
+      topic: "Greetings",
       words: [
         { ko: "안녕하세요", rom: "annyeonghaseyo", en: "Hello (polite)", level: "Beginner" },
         { ko: "안녕", rom: "annyeong", en: "Hi / Bye (casual)", level: "Beginner" },
@@ -98,7 +98,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Native Numbers (고유어 숫자)",
+      topic: "Native Numbers",
       words: [
         { ko: "하나", rom: "hana", en: "One", level: "Beginner" },
         { ko: "둘", rom: "dul", en: "Two", level: "Beginner" },
@@ -115,7 +115,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Sino Numbers (한자어 숫자)",
+      topic: "Sino Numbers",
       words: [
         { ko: "일", rom: "il", en: "One", level: "Beginner" },
         { ko: "이", rom: "i", en: "Two", level: "Beginner" },
@@ -133,7 +133,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Food (음식)",
+      topic: "Food",
       words: [
         { ko: "밥", rom: "bap", en: "Rice / meal", level: "Beginner" },
         { ko: "물", rom: "mul", en: "Water", level: "Beginner" },
@@ -153,7 +153,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Family (가족)",
+      topic: "Family",
       words: [
         { ko: "가족", rom: "gajok", en: "Family", level: "Beginner" },
         { ko: "엄마", rom: "eomma", en: "Mom", level: "Beginner" },
@@ -172,7 +172,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Common Verbs (동사)",
+      topic: "Common Verbs",
       words: [
         { ko: "가다", rom: "gada", en: "To go", level: "Beginner" },
         { ko: "오다", rom: "oda", en: "To come", level: "Beginner" },
@@ -192,7 +192,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Places (장소)",
+      topic: "Places",
       words: [
         { ko: "집", rom: "jip", en: "House / home", level: "Beginner" },
         { ko: "학교", rom: "hakgyo", en: "School", level: "Beginner" },
@@ -209,7 +209,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Travel (여행)",
+      topic: "Travel",
       words: [
         { ko: "공항", rom: "gonghang", en: "Airport", level: "Intermediate" },
         { ko: "기차", rom: "gicha", en: "Train", level: "Beginner" },
@@ -228,7 +228,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Time & Days (시간)",
+      topic: "Time & Days",
       words: [
         { ko: "오늘", rom: "oneul", en: "Today", level: "Beginner" },
         { ko: "내일", rom: "naeil", en: "Tomorrow", level: "Beginner" },
@@ -249,7 +249,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Colors (색깔)",
+      topic: "Colors",
       words: [
         { ko: "색깔", rom: "saekkal", en: "Color", level: "Beginner" },
         { ko: "빨간색", rom: "ppalgansaek", en: "Red", level: "Beginner" },
@@ -266,7 +266,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Weather (날씨)",
+      topic: "Weather",
       words: [
         { ko: "날씨", rom: "nalssi", en: "Weather", level: "Beginner" },
         { ko: "비", rom: "bi", en: "Rain", level: "Beginner" },
@@ -283,7 +283,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Body (몸)",
+      topic: "Body",
       words: [
         { ko: "몸", rom: "mom", en: "Body", level: "Beginner" },
         { ko: "머리", rom: "meori", en: "Head / hair", level: "Beginner" },
@@ -300,7 +300,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Hobbies (취미)",
+      topic: "Hobbies",
       words: [
         { ko: "취미", rom: "chwimi", en: "Hobby", level: "Beginner" },
         { ko: "운동", rom: "undong", en: "Exercise", level: "Beginner" },
@@ -317,7 +317,7 @@ window.KData = {
       ]
     },
     {
-      topic: "Feelings (감정)",
+      topic: "Feelings",
       words: [
         { ko: "행복해요", rom: "haengbokhaeyo", en: "I'm happy", level: "Intermediate" },
         { ko: "기뻐요", rom: "gippeoyo", en: "I'm glad", level: "Intermediate" },
@@ -427,7 +427,7 @@ window.KData = {
   /* --------------------------------------------------------------------- */
   conversation: [
     {
-      title: "Greetings (인사하기)",
+      title: "Greetings",
       level: "Beginner",
       lines: [
         { who: "A", ko: "안녕하세요!", rom: "annyeonghaseyo!", en: "Hello!" },
@@ -437,7 +437,7 @@ window.KData = {
       ]
     },
     {
-      title: "At a café (카페에서)",
+      title: "At a café",
       level: "Beginner",
       lines: [
         { who: "Staff", ko: "어서 오세요. 뭐 드릴까요?", rom: "eoseo oseyo. mwo deurilkkayo?", en: "Welcome. What can I get you?" },
@@ -447,7 +447,7 @@ window.KData = {
       ]
     },
     {
-      title: "Shopping (쇼핑)",
+      title: "Shopping",
       level: "Intermediate",
       lines: [
         { who: "You", ko: "이거 얼마예요?", rom: "igeo eolmayeyo?", en: "How much is this?" },
@@ -457,7 +457,7 @@ window.KData = {
       ]
     },
     {
-      title: "Asking directions (길 묻기)",
+      title: "Asking directions",
       level: "Intermediate",
       lines: [
         { who: "A", ko: "실례합니다. 지하철역이 어디예요?", rom: "sillyehamnida. jihacheollyeogi eodiyeyo?", en: "Excuse me. Where is the subway station?" },
@@ -467,7 +467,7 @@ window.KData = {
       ]
     },
     {
-      title: "Self-introduction (자기소개)",
+      title: "Self-introduction",
       level: "Advanced",
       lines: [
         { who: "A", ko: "안녕하세요. 처음 뵙겠습니다.", rom: "annyeonghaseyo. cheoeum boepgesseumnida.", en: "Hello. It's nice to meet you for the first time." },

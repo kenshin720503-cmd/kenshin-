@@ -15,37 +15,60 @@
       typeof window.speechSynthesis !== "undefined" &&
       typeof window.SpeechSynthesisUtterance !== "undefined",
     voice: null,
+    // Names of higher-quality Korean voices, in rough order of preference.
+    // Different OS/browsers ship different ones; we pick the best available.
+    QUALITY_HINTS: [
+      "natural", "neural", "google", "yuna", "heami",
+      "sun-hi", "sunhi", "injoon", "microsoft", "siri"
+    ],
+    scoreVoice(v) {
+      const name = (v.name || "").toLowerCase();
+      let score = 0;
+      this.QUALITY_HINTS.forEach((hint, i) => {
+        if (name.includes(hint)) score += this.QUALITY_HINTS.length - i;
+      });
+      if (v.lang === "ko-KR") score += 1;      // prefer the standard locale
+      if (v.localService === false) score += 1; // online voices are often neural
+      return score;
+    },
     pickVoice() {
       if (!this.supported) return;
       const voices = window.speechSynthesis.getVoices() || [];
-      this.voice =
-        voices.find((v) => v.lang === "ko-KR") ||
-        voices.find((v) => v.lang && v.lang.startsWith("ko")) ||
-        null;
+      const korean = voices.filter(
+        (v) => v.lang && v.lang.toLowerCase().indexOf("ko") === 0
+      );
+      if (!korean.length) {
+        this.voice = null;
+        return;
+      }
+      // Rank Korean voices and keep the best-scoring one.
+      this.voice = korean
+        .slice()
+        .sort((a, b) => this.scoreVoice(b) - this.scoreVoice(a))[0];
     }
   };
+
+  // Build an utterance with natural cadence and the best Korean voice.
+  function makeUtterance(text) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "ko-KR";
+    u.rate = 1.0;   // natural speed — slower than this sounds choppy/robotic
+    u.pitch = 1.0;  // natural pitch
+    if (tts.voice) u.voice = tts.voice;
+    return u;
+  }
 
   function speak(text) {
     if (!tts.supported) return;
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = "ko-KR";
-    u.rate = 0.9;
-    if (tts.voice) u.voice = tts.voice;
-    window.speechSynthesis.speak(u);
+    window.speechSynthesis.speak(makeUtterance(text));
   }
 
   // Speak a sequence of texts one after another (for whole dialogues).
   function speakSequence(texts) {
     if (!tts.supported) return;
     window.speechSynthesis.cancel();
-    texts.forEach((text) => {
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = "ko-KR";
-      u.rate = 0.9;
-      if (tts.voice) u.voice = tts.voice;
-      window.speechSynthesis.speak(u);
-    });
+    texts.forEach((text) => window.speechSynthesis.speak(makeUtterance(text)));
   }
 
   if (tts.supported) {
