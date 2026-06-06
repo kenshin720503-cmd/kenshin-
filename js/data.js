@@ -272,20 +272,20 @@ window.KData = {
       title: "At a café (카페에서)",
       level: "Beginner",
       lines: [
-        { who: "직원", ko: "어서 오세요. 뭐 드릴까요?", rom: "eoseo oseyo. mwo deurilkkayo?", en: "Welcome. What can I get you?" },
-        { who: "손님", ko: "아메리카노 한 잔 주세요.", rom: "amerikano han jan juseyo.", en: "One americano, please." },
-        { who: "직원", ko: "네, 사천 원입니다.", rom: "ne, sacheon wonimnida.", en: "Okay, that's 4,000 won." },
-        { who: "손님", ko: "여기 있어요. 감사합니다.", rom: "yeogi isseoyo. gamsahamnida.", en: "Here you go. Thank you." }
+        { who: "Staff", ko: "어서 오세요. 뭐 드릴까요?", rom: "eoseo oseyo. mwo deurilkkayo?", en: "Welcome. What can I get you?" },
+        { who: "You", ko: "아메리카노 한 잔 주세요.", rom: "amerikano han jan juseyo.", en: "One americano, please." },
+        { who: "Staff", ko: "네, 사천 원입니다.", rom: "ne, sacheon wonimnida.", en: "Okay, that's 4,000 won." },
+        { who: "You", ko: "여기 있어요. 감사합니다.", rom: "yeogi isseoyo. gamsahamnida.", en: "Here you go. Thank you." }
       ]
     },
     {
       title: "Shopping (쇼핑)",
       level: "Intermediate",
       lines: [
-        { who: "손님", ko: "이거 얼마예요?", rom: "igeo eolmayeyo?", en: "How much is this?" },
-        { who: "점원", ko: "만 오천 원이에요.", rom: "man ocheon wonieyo.", en: "It's 15,000 won." },
-        { who: "손님", ko: "조금 깎아 주세요.", rom: "jogeum kkakka juseyo.", en: "Please give me a little discount." },
-        { who: "점원", ko: "그럼 만 삼천 원에 드릴게요.", rom: "geureom man samcheon wone deurilgeyo.", en: "Then I'll give it for 13,000 won." }
+        { who: "You", ko: "이거 얼마예요?", rom: "igeo eolmayeyo?", en: "How much is this?" },
+        { who: "Clerk", ko: "만 오천 원이에요.", rom: "man ocheon wonieyo.", en: "It's 15,000 won." },
+        { who: "You", ko: "조금 깎아 주세요.", rom: "jogeum kkakka juseyo.", en: "Please give me a little discount." },
+        { who: "Clerk", ko: "그럼 만 삼천 원에 드릴게요.", rom: "geureom man samcheon wone deurilgeyo.", en: "Then I'll give it for 13,000 won." }
       ]
     },
     {
